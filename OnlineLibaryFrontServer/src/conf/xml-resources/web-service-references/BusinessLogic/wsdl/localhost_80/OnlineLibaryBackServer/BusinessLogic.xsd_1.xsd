@@ -1,0 +1,558 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://businessLogicWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://businessLogicWS/">
+
+<xs:element name="addBook" type="tns:addBook" />
+
+<xs:element name="addBookResponse" type="tns:addBookResponse" />
+
+<xs:element name="addComment" type="tns:addComment" />
+
+<xs:element name="addCommentResponse" type="tns:addCommentResponse" />
+
+<xs:element name="addPurchase" type="tns:addPurchase" />
+
+<xs:element name="addPurchaseResponse" type="tns:addPurchaseResponse" />
+
+<xs:element name="addRating" type="tns:addRating" />
+
+<xs:element name="addRatingResponse" type="tns:addRatingResponse" />
+
+<xs:element name="addSection" type="tns:addSection" />
+
+<xs:element name="addSectionResponse" type="tns:addSectionResponse" />
+
+<xs:element name="deleteBook" type="tns:deleteBook" />
+
+<xs:element name="deleteBookResponse" type="tns:deleteBookResponse" />
+
+<xs:element name="deleteSection" type="tns:deleteSection" />
+
+<xs:element name="deleteSectionResponse" type="tns:deleteSectionResponse" />
+
+<xs:element name="getAllBooks" type="tns:getAllBooks" />
+
+<xs:element name="getAllBooksResponse" type="tns:getAllBooksResponse" />
+
+<xs:element name="getAllSections" type="tns:getAllSections" />
+
+<xs:element name="getAllSectionsResponse" type="tns:getAllSectionsResponse" />
+
+<xs:element name="getAverageRatingByBook" type="tns:getAverageRatingByBook" />
+
+<xs:element name="getAverageRatingByBookResponse" type="tns:getAverageRatingByBookResponse" />
+
+<xs:element name="getBookById" type="tns:getBookById" />
+
+<xs:element name="getBookByIdResponse" type="tns:getBookByIdResponse" />
+
+<xs:element name="getBooksByKeyword" type="tns:getBooksByKeyword" />
+
+<xs:element name="getBooksByKeywordResponse" type="tns:getBooksByKeywordResponse" />
+
+<xs:element name="getBooksBySection" type="tns:getBooksBySection" />
+
+<xs:element name="getBooksBySectionResponse" type="tns:getBooksBySectionResponse" />
+
+<xs:element name="getCommentsByBook" type="tns:getCommentsByBook" />
+
+<xs:element name="getCommentsByBookResponse" type="tns:getCommentsByBookResponse" />
+
+<xs:element name="getCommentsByUser" type="tns:getCommentsByUser" />
+
+<xs:element name="getCommentsByUserResponse" type="tns:getCommentsByUserResponse" />
+
+<xs:element name="getPurchasesByBook" type="tns:getPurchasesByBook" />
+
+<xs:element name="getPurchasesByBookResponse" type="tns:getPurchasesByBookResponse" />
+
+<xs:element name="getPurchasesByPriceChart" type="tns:getPurchasesByPriceChart" />
+
+<xs:element name="getPurchasesByPriceChartResponse" type="tns:getPurchasesByPriceChartResponse" />
+
+<xs:element name="getPurchasesBySectionChart" type="tns:getPurchasesBySectionChart" />
+
+<xs:element name="getPurchasesBySectionChartResponse" type="tns:getPurchasesBySectionChartResponse" />
+
+<xs:element name="getPurchasesByUser" type="tns:getPurchasesByUser" />
+
+<xs:element name="getPurchasesByUserResponse" type="tns:getPurchasesByUserResponse" />
+
+<xs:element name="getRatingsByUser" type="tns:getRatingsByUser" />
+
+<xs:element name="getRatingsByUserResponse" type="tns:getRatingsByUserResponse" />
+
+<xs:element name="getSectionById" type="tns:getSectionById" />
+
+<xs:element name="getSectionByIdResponse" type="tns:getSectionByIdResponse" />
+
+<xs:element name="getTopBooksByComment" type="tns:getTopBooksByComment" />
+
+<xs:element name="getTopBooksByCommentResponse" type="tns:getTopBooksByCommentResponse" />
+
+<xs:element name="getTopBooksByPurchases" type="tns:getTopBooksByPurchases" />
+
+<xs:element name="getTopBooksByPurchasesResponse" type="tns:getTopBooksByPurchasesResponse" />
+
+<xs:element name="getTopBooksByRating" type="tns:getTopBooksByRating" />
+
+<xs:element name="getTopBooksByRatingResponse" type="tns:getTopBooksByRatingResponse" />
+
+<xs:element name="getUserById" type="tns:getUserById" />
+
+<xs:element name="getUserByIdResponse" type="tns:getUserByIdResponse" />
+
+<xs:element name="login" type="tns:login" />
+
+<xs:element name="loginResponse" type="tns:loginResponse" />
+
+<xs:element name="registry" type="tns:registry" />
+
+<xs:element name="registryResponse" type="tns:registryResponse" />
+
+<xs:element name="updateBook" type="tns:updateBook" />
+
+<xs:element name="updateBookResponse" type="tns:updateBookResponse" />
+
+<xs:element name="updateSection" type="tns:updateSection" />
+
+<xs:element name="updateSectionResponse" type="tns:updateSectionResponse" />
+
+<xs:complexType name="getTopBooksByPurchases">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getTopBooksByPurchasesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="book">
+<xs:sequence>
+<xs:element name="author" type="xs:string" minOccurs="0" />
+<xs:element name="dateOfPublicaion" type="xs:dateTime" minOccurs="0" />
+<xs:element name="description" type="xs:string" minOccurs="0" />
+<xs:element name="fileName" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:int" minOccurs="0" />
+<xs:element name="image" type="xs:string" minOccurs="0" />
+<xs:element name="numberOfPages" type="xs:int" />
+<xs:element name="preview" type="xs:string" minOccurs="0" />
+<xs:element name="price" type="xs:int" />
+<xs:element name="section" type="xs:int" minOccurs="0" />
+<xs:element name="title" type="xs:string" minOccurs="0" />
+<xs:element name="year" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPurchasesByPriceChart">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getPurchasesByPriceChartResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPurchasesByBook">
+<xs:sequence>
+<xs:element name="bookId" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPurchasesByBookResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:purchase" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="purchase">
+<xs:sequence>
+<xs:element name="book" type="xs:int" minOccurs="0" />
+<xs:element name="cardNumber" type="xs:string" minOccurs="0" />
+<xs:element name="country" type="xs:string" minOccurs="0" />
+<xs:element name="firstName" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:int" minOccurs="0" />
+<xs:element name="secondName" type="xs:string" minOccurs="0" />
+<xs:element name="securityNumber" type="xs:string" minOccurs="0" />
+<xs:element name="user" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSectionById">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSectionByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:section" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="section">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:int" minOccurs="0" />
+<xs:element name="image" type="xs:string" minOccurs="0" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCommentsByUser">
+<xs:sequence>
+<xs:element name="userId" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCommentsByUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:comment" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="comment">
+<xs:sequence>
+<xs:element name="book" type="xs:int" minOccurs="0" />
+<xs:element name="content" type="xs:string" minOccurs="0" />
+<xs:element name="date" type="xs:dateTime" minOccurs="0" />
+<xs:element name="id" type="xs:int" minOccurs="0" />
+<xs:element name="user" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPurchasesBySectionChart">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getPurchasesBySectionChartResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registry">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0" />
+<xs:element name="password" type="xs:string" minOccurs="0" />
+<xs:element name="firstName" type="xs:string" minOccurs="0" />
+<xs:element name="secondName" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTopBooksByRating">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getTopBooksByRatingResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBook">
+<xs:sequence>
+<xs:element name="title" type="xs:string" minOccurs="0" />
+<xs:element name="description" type="xs:string" minOccurs="0" />
+<xs:element name="preview" type="xs:string" minOccurs="0" />
+<xs:element name="numberOfPages" type="xs:int" />
+<xs:element name="price" type="xs:int" />
+<xs:element name="year" type="xs:int" />
+<xs:element name="image" type="xs:string" minOccurs="0" />
+<xs:element name="fileName" type="xs:string" minOccurs="0" />
+<xs:element name="dateOfPublication" type="xs:dateTime" minOccurs="0" />
+<xs:element name="section" type="xs:int" minOccurs="0" />
+<xs:element name="author" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addSection">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="description" type="xs:string" minOccurs="0" />
+<xs:element name="image" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addSectionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPurchase">
+<xs:sequence>
+<xs:element name="cardNumber" type="xs:string" minOccurs="0" />
+<xs:element name="securityNumber" type="xs:string" minOccurs="0" />
+<xs:element name="bookId" type="xs:int" minOccurs="0" />
+<xs:element name="userId" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPurchaseResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBooksByKeyword">
+<xs:sequence>
+<xs:element name="keyword" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBooksByKeywordResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addRating">
+<xs:sequence>
+<xs:element name="value" type="xs:int" minOccurs="0" />
+<xs:element name="userId" type="xs:int" minOccurs="0" />
+<xs:element name="bookId" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addRatingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllBooks">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getAllBooksResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteBook">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAverageRatingByBook">
+<xs:sequence>
+<xs:element name="bookId" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAverageRatingByBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBooksBySection">
+<xs:sequence>
+<xs:element name="sectionId" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBooksBySectionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBookById">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBookByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addComment">
+<xs:sequence>
+<xs:element name="bookId" type="xs:int" minOccurs="0" />
+<xs:element name="userId" type="xs:int" minOccurs="0" />
+<xs:element name="content" type="xs:string" minOccurs="0" />
+<xs:element name="date" type="xs:dateTime" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCommentResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateSection">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="description" type="xs:string" minOccurs="0" />
+<xs:element name="image" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateSectionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBook">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+<xs:element name="title" type="xs:string" minOccurs="0" />
+<xs:element name="description" type="xs:string" minOccurs="0" />
+<xs:element name="preview" type="xs:string" minOccurs="0" />
+<xs:element name="numberOfPages" type="xs:int" />
+<xs:element name="price" type="xs:int" />
+<xs:element name="year" type="xs:int" />
+<xs:element name="image" type="xs:string" minOccurs="0" />
+<xs:element name="fileName" type="xs:string" minOccurs="0" />
+<xs:element name="dateOfPublication" type="xs:dateTime" minOccurs="0" />
+<xs:element name="section" type="xs:int" minOccurs="0" />
+<xs:element name="author" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPurchasesByUser">
+<xs:sequence>
+<xs:element name="userId" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPurchasesByUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:purchase" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRatingsByUser">
+<xs:sequence>
+<xs:element name="userId" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRatingsByUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:rating" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rating">
+<xs:sequence>
+<xs:element name="book" type="xs:int" minOccurs="0" />
+<xs:element name="id" type="xs:int" minOccurs="0" />
+<xs:element name="user" type="xs:int" minOccurs="0" />
+<xs:element name="value" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCommentsByBook">
+<xs:sequence>
+<xs:element name="bookId" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCommentsByBookResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:comment" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserById">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="user">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0" />
+<xs:element name="firstName" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:int" minOccurs="0" />
+<xs:element name="password" type="xs:string" minOccurs="0" />
+<xs:element name="secondName" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteSection">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteSectionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="login">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0" />
+<xs:element name="password" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllSections">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getAllSectionsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:section" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTopBooksByComment">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getTopBooksByCommentResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
