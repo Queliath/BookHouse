@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26.04.2016 22:20:40 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.Comment" table="comment" catalog="online_libary_kursach" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="book" type="java.lang.Integer">
+            <column name="comment_book_id" not-null="true" />
+        </property>
+        <property name="user" type="java.lang.Integer">
+            <column name="comment_user_id" not-null="true" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535" not-null="true" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="online_libary_kursach"/>
+  <table-filter match-name="rating"/>
+  <table-filter match-name="section"/>
+  <table-filter match-name="purchase"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="book"/>
+  <table-filter match-name="comment"/>
+</hibernate-reverse-engineering>
