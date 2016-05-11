@@ -24,10 +24,8 @@ CREATE TABLE `book` (
   `section_id` int(11) NOT NULL,
   `img` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `section_id_idx` (`section_id`),
-  CONSTRAINT `section_id` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `id_UNIQUE` (`id`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -36,13 +34,7 @@ CREATE TABLE `comment` (
   `comment_user_id` int(11) NOT NULL,
   `comment_book_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `user_id_idx` (`comment_user_id`),
-  KEY `book_id_idx` (`comment_book_id`),
-  KEY `comment_user_id_idx` (`comment_user_id`),
-  KEY `comment_book_id_idx` (`comment_book_id`),
-  CONSTRAINT `comment_book_id` FOREIGN KEY (`comment_book_id`) REFERENCES `book` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `comment_user_id` FOREIGN KEY (`comment_user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `purchase` (
@@ -55,11 +47,7 @@ CREATE TABLE `purchase` (
   `second_name` varchar(30) NOT NULL,
   `country` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `user_id_idx` (`user_id`),
-  KEY `book_id_idx` (`book_id`),
-  CONSTRAINT `book_id` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `rating` (
@@ -68,11 +56,7 @@ CREATE TABLE `rating` (
   `rating_user_id` int(11) NOT NULL,
   `rating_book_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `rating_user_id_idx` (`rating_user_id`),
-  KEY `rating_book_id_idx` (`rating_book_id`),
-  CONSTRAINT `rating_book_id` FOREIGN KEY (`rating_book_id`) REFERENCES `book` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `rating_user_id` FOREIGN KEY (`rating_user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `section` (
@@ -95,4 +79,26 @@ CREATE TABLE `user` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+ALTER TABLE `book`
+ADD KEY `section_id_idx` (`section_id`), 
+ADD CONSTRAINT `section_id` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `comment`
+ADD KEY `comment_user_id_idx` (`comment_user_id`),
+ADD KEY `comment_book_id_idx` (`comment_book_id`),
+ADD CONSTRAINT `comment_book_id` FOREIGN KEY (`comment_book_id`) REFERENCES `book` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `comment_user_id` FOREIGN KEY (`comment_user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `purchase`
+ADD KEY `user_id_idx` (`user_id`),
+ADD KEY `book_id_idx` (`book_id`),
+ADD CONSTRAINT `book_id` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `rating`
+ADD KEY `rating_user_id_idx` (`rating_user_id`),
+ADD KEY `rating_book_id_idx` (`rating_book_id`),
+ADD CONSTRAINT `rating_book_id` FOREIGN KEY (`rating_book_id`) REFERENCES `book` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `rating_user_id` FOREIGN KEY (`rating_user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
